@@ -19,6 +19,7 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 import com.github.clock.Clock;
+import com.github.clock.Args;
 import com.github.clock.UpdateObserver;
 
 public class ClockViewer extends JComponent{
@@ -29,6 +30,7 @@ public class ClockViewer extends JComponent{
     private boolean debugMode = false;
 
     public ClockViewer(Clock clock){
+	this.args = args;
         clock.addUpdateObserver(new UpdateObserver(){
             @Override
             public void update(Clock clock) {
@@ -117,7 +119,7 @@ public class ClockViewer extends JComponent{
         drawHand(g2, clock.getSecond(), length * 0.8);
 
         g2.setStroke(new BasicStroke(2));
-        g2.setColor(Color.RED);
+        g2.setColor(Color.decode(args.getLongHandColor()));
         drawHand(g2, clock.getMinute(), length * 0.7);
         // 長針の位置は，分の位置で表そうとすると，時間×5．
         // 24時間制のため，12で割った余りを時間とする．

@@ -23,7 +23,7 @@ public class Args {
     @Option(name="-d", aliases="--debug", usage="debug mode.")
     private boolean debugMode = false;
 
-    @Option(name="-lc",aliases ="--long-hand-color" ,usage = "墓克の咖を回年する。")
+    @Option(name="-lc",aliases ="--long-hand-color" ,usage = "捘箳克挙螔咖挙驋回捘陹す挙霋。")
 	private String longHandColor ="#ff0000";
 
 
